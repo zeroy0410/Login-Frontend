@@ -1,17 +1,12 @@
-# Vue 3 + TypeScript + Vite
+#### 认证授权服务的前端部分
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+实现一个用户认证授权服务。包括以下几点：
 
-## Recommended IDE Setup
+- 使用邮箱验证码验证用户身份，需要实现注册和登陆接口
+- 基于 [JWT](https://jwt.io/) 实现接口的跨域认证（接口功能任意，能体现即可）
+- 密码入库前需要单向加密，加密方式自定
+- 前后端实现和数据库自定
+- 基于 docker 部署在云服务器上
+- 开发过程使用 git，并记录开发过程中的文档和整个逻辑的时序图
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
-
-## Type Support For `.vue` Imports in TS
-
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's Take Over mode by following these steps:
-
-1. Run `Extensions: Show Built-in Extensions` from VS Code's command palette, look for `TypeScript and JavaScript Language Features`, then right click and select `Disable (Workspace)`. By default, Take Over mode will enable itself if the default TypeScript extension is disabled.
-2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
-
-You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
-# Login-Frontend
+需要交付的产品：能在浏览器上通过 ip:port 访问网页并能体验到整个认证授权的流程
