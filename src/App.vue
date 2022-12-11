@@ -1,8 +1,10 @@
 <template>
+  <el-card class="box-card" style="margin: 100px;height:500px;">
     <NavigationBar></NavigationBar>
-  <div>
-    <router-view/>
-  </div>
+    <div style="padding: 10px;">
+      <router-view/>
+    </div>
+  </el-card>
 </template>
 
 <script lang="ts">
@@ -18,14 +20,15 @@ export default {
 
 <style lang="scss">
   nav {
-  padding: 30px;
+  padding: 10px;
 
   a {
     font-weight: bold;
-    color: #2c3e50;
-
+    color: #ce94d8;
+    text-decoration: none;
+    padding: 10px;
     &.router-link-exact-active {
-      color: #42b983;
+      color: #8e24aa;
     }
   }
 }

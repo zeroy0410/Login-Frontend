@@ -26,6 +26,7 @@ const routes: Array<RouteRecordRaw> = [
         name: 'profile',
         component: () => import('../views/ProfileView.vue'),
         beforeEnter: (to, from, next) => {
+            // console.log(localStorage.getItem('login'));
             if (localStorage.getItem('login') === 'true') {
                 next()
             } else {
