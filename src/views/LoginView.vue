@@ -9,6 +9,11 @@
             <el-form-item label="密码：" prop="password">
                 <el-input type="password" v-model="formValue.password" />
             </el-form-item>
+            <el-form-item label="">
+                <vue-recaptcha
+                    @verify="captchaVerifyHandler($event)"
+                />
+            </el-form-item>
         </el-form>
     </div>
     <el-button color="#626aef" @click="loginHandler">登录！</el-button>
@@ -21,9 +26,15 @@ import {login, LoginRequest} from "@/api/account";
 import { ElMessage } from 'element-plus'
 import type { FormInstance, FormRules } from 'element-plus'
 import { type } from 'os';
+import {VueRecaptcha} from "vue3-recaptcha-v2";
 
 export default defineComponent({
+    components: {VueRecaptcha},
     methods: {
+        captchaVerifyHandler(response: string) {
+            this.captchaVerified = true,
+            this.captchaToken = response
+        },
         loginHandler() {
             this.loading=true;
             if(!this.ruleFormRef){
@@ -41,7 +52,8 @@ export default defineComponent({
                 }
                 const loginRequest: LoginRequest = {
                     account: this.formValue.account,
-                    password: this.formValue.password
+                    password: this.formValue.password,
+                    'captcha-token': this.captchaToken
                 }
                 login(loginRequest).then(()=> {
                     ElMessage.closeAll();
@@ -66,6 +78,8 @@ export default defineComponent({
                 })
             },
             isLogin:ref(false),
+            captchaVerified: ref(false),
+            captchaToken: ref(''),
             formValue: ref({
                 account: '',
                 password: '',

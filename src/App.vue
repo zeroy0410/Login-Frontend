@@ -1,5 +1,5 @@
 <template>
-  <el-card class="box-card" style="margin: 100px;height:500px;">
+  <el-card class="box-card" style="margin: 100px;height:600px;">
     <NavigationBar></NavigationBar>
     <div style="padding: 10px;">
       <router-view/>

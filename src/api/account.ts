@@ -4,6 +4,7 @@ import {api, clearAuthVars, CommonResponse} from '@/api/axios';
 export interface LoginRequest{
     account: string;
     password: string;
+    'captcha-token': string;
 }
 
 export function login(request: LoginRequest) {
@@ -34,11 +35,28 @@ export interface JoinRequest{
     uid: string,
     'nick-name': string,
     email: string,
-    password: string
+    'verify-email': string,
+    password: string,
+    'captcha-token':string
 }
 
 export function join(request: JoinRequest) {
     return api.post('/api/account/join',request).then((response: AxiosResponse<CommonResponse>) => {
+        if(response.data.code!=0){
+            throw new Error(response.data.message)
+        } else {
+            return Promise.resolve(response.data.message)
+        }
+    })
+}
+
+export interface EmailRequest{
+    'verify-email': string,
+    // 'captcha-token':string
+}
+
+export function VerifyEmail(request: EmailRequest) {
+    return api.post('/api/account/join/verifyemail',request).then((response: AxiosResponse<CommonResponse>)=> {
         if(response.data.code!=0){
             throw new Error(response.data.message)
         } else {
