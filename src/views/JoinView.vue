@@ -37,7 +37,7 @@
 <script lang="ts">
 import { reactive, ref, defineComponent } from 'vue'
 import { ElMessage, FormInstance } from 'element-plus';
-import { join, VerifyEmail, JoinRequest, EmailRequest } from "@/api/account";
+import { join, VerifyEmail, JoinRequest, EmailRequest } from "../api/account";
 import { VueRecaptcha } from "vue3-recaptcha-v2";
 import { useRefHistory } from '@vueuse/core';
 import { analyze } from 'eslint-scope';

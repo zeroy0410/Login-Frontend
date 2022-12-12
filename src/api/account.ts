@@ -1,5 +1,5 @@
 import {AxiosResponse} from 'axios';
-import {api, clearAuthVars, CommonResponse} from '@/api/axios';
+import {api, clearAuthVars, CommonResponse} from './axios';
 
 export interface LoginRequest{
     account: string;

@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import NavigationBar from '/src/components/NavigationBar.vue';
-import setupWithToken from "@/api/token";
+import setupWithToken from "./api/token";
 export default {
   components: {NavigationBar},
   setup() {

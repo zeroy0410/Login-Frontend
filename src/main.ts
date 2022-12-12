@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-import {installAxios} from "@/api/axios";
+import {installAxios} from "./api/axios";
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import { installCaptcha } from './components/VueRecaptcha';

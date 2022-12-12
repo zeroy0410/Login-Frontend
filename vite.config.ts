@@ -6,6 +6,7 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 // const resolve = require('path');
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: './',
   plugins: [
     vue(),
     // AutoImport({
@@ -15,9 +16,6 @@ export default defineConfig({
     //   resolvers: [ElementPlusResolver()],
     // }),
   ],
-  resolve: {
-    alias: [{ find: '@', replacement: 'src' }],
-  },
   server: {
     host: '127.0.0.1',
     port: 5173,

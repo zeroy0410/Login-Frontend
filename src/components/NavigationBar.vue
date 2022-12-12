@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
-import { logout } from '@/api/account'
+import { logout } from '../api/account';
 import { ElMessage } from 'element-plus';
 import router from '@/router';
 // import router from '@/router';

@@ -22,7 +22,7 @@
 <script lang="ts">
 
 import { reactive, ref, defineComponent } from 'vue'
-import {login, LoginRequest} from "@/api/account";
+import {login, LoginRequest} from "../api/account";
 import { ElMessage } from 'element-plus'
 import type { FormInstance, FormRules } from 'element-plus'
 import { type } from 'os';
